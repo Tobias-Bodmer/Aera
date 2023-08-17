@@ -4,9 +4,9 @@
 
 ## **Prototyp**
 
-**[Play now!](https://tobias-bodmer.github.io/Thesis/index.html)**
+**[Play now!](https://tobias-bodmer.github.io/Aera/)**
 
-**Alle Sprites können [hier](https://tobias-bodmer.github.io/Thesis/sprites.html)  angeschaut werden!** 
+**Alle Sprites können [hier](https://tobias-bodmer.github.io/Aera/sprites.html)  angeschaut werden!** 
 
 ## **Controls**
 
@@ -20,4 +20,4 @@ Escape - Pause
 
 ## **Bachelorarbeit**
 
-In unserer **[Bachelorarbeit](https://github.com/Tobias-Bodmer/Thesis/blob/main/Dokumentation/Bachelorarbeit_Huchler_Bodmer.pdf)** findet Ihr genauere Infos über das Spiel.
+In unserer **[Bachelorarbeit](https://github.com/Tobias-Bodmer/Aera/blob/main/Dokumentation/Bachelorarbeit_Huchler_Bodmer.pdf)** findet Ihr genauere Infos über das Spiel.
