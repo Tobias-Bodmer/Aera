@@ -514,7 +514,7 @@ namespace Networking {
     }
 
     export function setGamestate(_playing: boolean) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SETGAMESTATE, playing: _playing } });
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SETGAMESTATE, playing: _playing } });
     }
 
     export function createRoom() {
@@ -548,36 +548,36 @@ namespace Networking {
     }
 
     export function updateAvatarPosition(_position: ƒ.Vector3, _rotation: ƒ.Vector3) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.TRANSFORM, value: _position, rotation: _rotation } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.TRANSFORM, value: _position, rotation: _rotation } })
     }
 
 
     export function sendClientInput(_netId: number, _inputPayload: Interfaces.IInputAvatarPayload) {
-        client.dispatch({ route: FudgeNet.ROUTE.HOST, content: { text: FUNCTION.CLIENTMOVEMENT, netId: _netId, input: _inputPayload } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER_HOST, content: { text: FUNCTION.CLIENTMOVEMENT, netId: _netId, input: _inputPayload } })
     }
 
     export function sendServerBuffer(_netId: number, _buffer: Interfaces.IStatePayload) {
         if (Networking.client.idHost == Networking.client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SERVERBUFFER, netId: _netId, buffer: _buffer } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SERVERBUFFER, netId: _netId, buffer: _buffer } })
         }
     }
 
     export function knockbackRequest(_netId: number, _knockbackForce: number, _position: Game.ƒ.Vector3) {
-        client.dispatch({ route: undefined, idTarget: client.idHost, content: { text: FUNCTION.KNOCKBACKREQUEST, netId: _netId, knockbackForce: _knockbackForce, position: _position } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: client.idHost, content: { text: FUNCTION.KNOCKBACKREQUEST, netId: _netId, knockbackForce: _knockbackForce, position: _position } })
     }
 
     export function knockbackPush(_knockbackForce: number, _position: Game.ƒ.Vector3) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.KNOCKBACKPUSH, knockbackForce: _knockbackForce, position: _position } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.KNOCKBACKPUSH, knockbackForce: _knockbackForce, position: _position } })
     }
 
     export function updateInventory(_add: boolean, _itemId: Items.ITEMID, _itemNetId: number, _netId: number) {
         if (client.id == client.idHost) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEINVENTORY, add: _add, itemId: _itemId, itemNetId: _itemNetId, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEINVENTORY, add: _add, itemId: _itemId, itemNetId: _itemNetId, netId: _netId } })
         }
     }
 
     export function spawnMinimap(_miniMapInfos: Interfaces.IMinimapInfos[]) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPWANMINIMAP, miniMapInfos: _miniMapInfos } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPWANMINIMAP, miniMapInfos: _miniMapInfos } })
     }
     //#endregion
 
@@ -586,25 +586,25 @@ namespace Networking {
 
     //#region bullet
     export function spawnBullet(_bulletType: Bullets.BULLETCLASS, _direction: ƒ.Vector3, _bulletNetId: number, _ownerNetId: number) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SPAWNBULLET, bulletType: _bulletType, direction: _direction, ownerNetId: _ownerNetId, bulletNetId: _bulletNetId } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SPAWNBULLET, bulletType: _bulletType, direction: _direction, ownerNetId: _ownerNetId, bulletNetId: _bulletNetId } })
     }
 
     export function sendMagazin(_magazin: Interfaces.IMagazin) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SENDMAGAZIN, magazin: _magazin } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.id).id, content: { text: FUNCTION.SENDMAGAZIN, magazin: _magazin } })
     }
 
     export function sendBulletInput(_netId: number, _inputPayload: Interfaces.IInputBulletPayload) {
-        client.dispatch({ route: FudgeNet.ROUTE.HOST, content: { text: FUNCTION.BULLETPREDICT, netId: _netId, input: _inputPayload } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER_HOST, content: { text: FUNCTION.BULLETPREDICT, netId: _netId, input: _inputPayload } })
     }
 
     export function updateBullet(_position: ƒ.Vector3, _rotation: ƒ.Vector3, _netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.BULLETTRANSFORM, position: _position, rotation: _rotation, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.BULLETTRANSFORM, position: _position, rotation: _rotation, netId: _netId } })
         }
     }
     export function removeBullet(_netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.BULLETDIE, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.BULLETDIE, netId: _netId } })
         }
     }
     //#endregion
@@ -612,7 +612,7 @@ namespace Networking {
     //#region specialItems
     export function spawnZipZap(_ownerNetId: number, _netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNZIPZAP, ownerNetId: _ownerNetId, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNZIPZAP, ownerNetId: _ownerNetId, netId: _netId } })
         }
     }
     //#endregion
@@ -620,24 +620,24 @@ namespace Networking {
     //#region enemy
     export function spawnEnemy(_enemyClass: Enemy.ENEMYCLASS, _enemy: Enemy.Enemy, _netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNENEMY, enemyClass: _enemyClass, id: _enemy.id, attributes: _enemy.attributes, position: _enemy.mtxLocal.translation, netId: _netId, target: _enemy.target } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNENEMY, enemyClass: _enemyClass, id: _enemy.id, attributes: _enemy.attributes, position: _enemy.mtxLocal.translation, netId: _netId, target: _enemy.target } })
         }
     }
     
     export function updateEnemyPosition(_position: ƒ.Vector3, _netId: number) {
         if (Networking.client.id == Networking.client.idHost) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENEMYTRANSFORM, position: _position, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENEMYTRANSFORM, position: _position, netId: _netId } })
         }
     }
 
     export function updateEntityAnimationState(_state: Entity.ANIMATIONSTATES, _netId: number) {
         if (Networking.client.idHost == Networking.client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENTITYANIMATIONSTATE, state: _state, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENTITYANIMATIONSTATE, state: _state, netId: _netId } })
         }
     }
 
     export function removeEntity(_netId: number) {
-        client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENTITYDIE, netId: _netId } })
+        client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ENTITYDIE, netId: _netId } })
     }
     //#endregion
 
@@ -646,32 +646,32 @@ namespace Networking {
     //#region items
     export function spawnItem(_id: number, _position: ƒ.Vector2, _netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNINTERNALITEM, id: _id, position: _position, netId: _netId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SPAWNINTERNALITEM, id: _id, position: _position, netId: _netId } });
         }
     }
     export function updateEntityAttributes(_attributePayload: Interfaces.IAttributeValuePayload, _netId: number) {
         if (client.idHost != client.id) {
-            client.dispatch({ route: FudgeNet.ROUTE.HOST, content: { text: FUNCTION.UPDATEATTRIBUTES, payload: _attributePayload, netId: _netId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER_HOST, content: { text: FUNCTION.UPDATEATTRIBUTES, payload: _attributePayload, netId: _netId } });
         }
         else {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEATTRIBUTES, payload: _attributePayload, netId: _netId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEATTRIBUTES, payload: _attributePayload, netId: _netId } });
         }
     }
     export function updateAvatarWeapon(_weapon: Weapons.Weapon, _targetNetId: number) {
         if (client.idHost != client.id) {
-            client.dispatch({ route: FudgeNet.ROUTE.HOST, content: { text: FUNCTION.UPDATEWEAPON, weapon: _weapon, type: _weapon.getType(), netId: _targetNetId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER_HOST, content: { text: FUNCTION.UPDATEWEAPON, weapon: _weapon, type: _weapon.getType(), netId: _targetNetId } });
         }
         else {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEWEAPON, weapon: _weapon, type: _weapon.getType(), netId: _targetNetId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEWEAPON, weapon: _weapon, type: _weapon.getType(), netId: _targetNetId } });
         }
     }
 
     export function removeItem(_netId: number) {
         if (client.idHost != client.id) {
-            client.dispatch({ route: FudgeNet.ROUTE.HOST, content: { text: FUNCTION.ITEMDIE, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER_HOST, content: { text: FUNCTION.ITEMDIE, netId: _netId } })
         }
         else {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ITEMDIE, netId: _netId } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.ITEMDIE, netId: _netId } })
 
         }
     }
@@ -679,7 +679,7 @@ namespace Networking {
     //#region buffs
     export function updateBuffList(_buffList: Buff.Buff[], _netId: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEBUFF, buffList: _buffList, netId: _netId } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEBUFF, buffList: _buffList, netId: _netId } });
         }
     }
     //#endregion
@@ -687,7 +687,7 @@ namespace Networking {
     //#region UI
     export function updateUI(_position: Game.ƒ.Vector2, _value: number) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEUI, position: _position, value: _value } });
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.UPDATEUI, position: _position, value: _value } });
         }
     }
     //#endregion
@@ -696,12 +696,12 @@ namespace Networking {
     //#region room
     export function sendRoom(_room: Interfaces.IRoom) {
         if (client.idHost == client.id) {
-            client.dispatch({ route: undefined, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SENDROOM, room: _room } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: clients.find(elem => elem.id != client.idHost).id, content: { text: FUNCTION.SENDROOM, room: _room } })
         }
     }
     export function switchRoomRequest(_direction: Interfaces.IRoomExits) {
         if (client.idHost != client.id) {
-            client.dispatch({ route: undefined, idTarget: client.idHost, content: { text: FUNCTION.SWITCHROOMREQUEST, direction: _direction } })
+            client.dispatch({ route: FudgeNet.ROUTE.VIA_SERVER, idTarget: client.idHost, content: { text: FUNCTION.SWITCHROOMREQUEST, direction: _direction } })
         }
     }
     //#endregion
