@@ -1,0 +1,74 @@
+{
+    "standardBullets": [
+        {
+            "name": "standard",
+            "type": 0,
+            "speed": 20,
+            "hitPointsScale": 1,
+            "lifetime": 60,
+            "knockbackForce": 6,
+            "killcount": 1,
+            "texturePath": "./Resources/Image/Projectiles/arrow.png"
+        },
+        {
+            "name": "highspeed",
+            "type": 1,
+            "speed": 30,
+            "hitPointsScale": 1.5,
+            "lifetime": 30,
+            "knockbackForce": 8,
+            "killcount": 2,
+            "texturePath": "./Resources/Image/Projectiles/arrow.png"
+        },
+        {
+            "name": "slow",
+            "type": 2,
+            "speed": 6,
+            "hitPointsScale": 2,
+            "lifetime": 360,
+            "knockbackForce": 4,
+            "killcount": 8,
+            "texturePath": "./Resources/Image/Projectiles/arrow.png"
+        },
+        {
+            "name": "summoner",
+            "type": 4,
+            "speed": 4,
+            "hitPointsScale": 1,
+            "lifetime": 3000,
+            "knockbackForce": 6,
+            "killcount": 1,
+            "texturePath": "./Resources/Image/Projectiles/waterBall.png"
+        },
+        {
+            "name": "stone",
+            "type": 5,
+            "speed": 8,
+            "hitPointsScale": 2,
+            "lifetime": null,
+            "knockbackForce": 12,
+            "killcount": 1,
+            "texturePath": "./Resources/Image/Projectiles/waterBall.png"
+        },
+        {
+            "name": "thorshammer",
+            "type": 6,
+            "speed": 10,
+            "hitPointsScale": 10,
+            "lifetime": 120,
+            "knockbackForce": 6,
+            "killcount": 100,
+            "texturePath": "./Resources/Image/Projectiles/thorsHammerUp.png"
+        },
+        {
+            "name": "zipzap",
+            "type": 7,
+            "speed": 8,
+            "hitPointsScale": 0.2,
+            "lifetime": 30,
+            "knockbackForce": 0,
+            "killcount": 50,
+            "texturePath": "./Resources/Image/Projectiles/waterBall.png"
+        }
+    ]
+}

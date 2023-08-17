@@ -1,0 +1,150 @@
+{
+    "avatars": [
+        {
+            "name": "ranged",
+            "attributes": {
+                "healthPoints": 100,
+                "attackPoints": 5,
+                "speed": 3,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 0,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "melee",
+            "attributes": {
+                "healthPoints": 100,
+                "attackPoints": 6,
+                "speed": 3,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 5,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        }
+    ],
+    "enemies": [
+        {
+            "name": "bat",
+            "attributes": {
+                "healthPoints": 10,
+                "attackPoints": 1,
+                "speed": 2.5,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 0,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "smalltick",
+            "attributes": {
+                "healthPoints": 10,
+                "attackPoints": 1,
+                "speed": 2.5,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 0,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "redtick",
+            "attributes": {
+                "healthPoints": 15,
+                "attackPoints": 1,
+                "speed": 1.5,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 0,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "skeleton",
+            "attributes": {
+                "healthPoints": 20,
+                "attackPoints": 1,
+                "speed": 4,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 0,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "oger",
+            "attributes": {
+                "healthPoints": 40,
+                "attackPoints": 5,
+                "speed": 1,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 25,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        },
+        {
+            "name": "summoner",
+            "attributes": {
+                "healthPoints": 250,
+                "attackPoints": 1,
+                "speed": 2,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 5,
+                "coolDownReduction": 1,
+                "accuracy": 80
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": -0.4,
+            "colliderScaleFaktor": 0.4
+        },
+        {
+            "name": "bigboom",
+            "attributes": {
+                "healthPoints": 250,
+                "attackPoints": 1,
+                "speed": 2,
+                "scale": 1,
+                "knockbackForce": 0.1,
+                "armor": 25,
+                "coolDownReduction": 1,
+                "accuracy": 70
+            },
+            "offsetColliderX": 0,
+            "offsetColliderY": 0,
+            "colliderScaleFaktor": 1
+        }
+    ]
+}

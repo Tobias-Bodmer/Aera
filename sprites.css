@@ -1,0 +1,50 @@
+body{
+    font-family: Minecraft;
+    background-color: rgb(145, 143, 140);
+}
+.sprite{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+img{
+    width: 200px;
+}
+h1{
+    font-size: 25px;
+    font-family: Minecraft;
+}
+
+.items{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    
+}
+
+.items img{
+    width: 80px;
+}
+
+.items h1 {
+    text-align: center;
+}
+
+#test{
+    display: flex;
+}
+
+#left{
+    width: 50%;
+}
+
+#right{
+    width: 50%;
+}
+
+.credits{
+    font-size: 10px;
+}

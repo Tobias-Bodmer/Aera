@@ -1,0 +1,152 @@
+{
+    "internalItems": [
+        {
+            "name": "Ice Bucket Challenge",
+            "description": "Cools not only you but also your cooldown down.",
+            "id": 0,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 10,
+            "rarity": 1
+        },
+        {
+            "name": "Sharpening Stone",
+            "description": "A divine whetstone, sharpening your weapons with it will make them incredibly sharp. With such a weapon, even bones can be cut without effort.",
+            "id": 1,
+            "imgSrc": "./Resources/Image/Items/damageUp.png",
+            "value": 1,
+            "rarity": 2
+        },
+        {
+            "name": "speedUp",
+            "description": "up over and gone!",
+            "id": 2,
+            "imgSrc": "./Resources/Image/Items/speedUp.png",
+            "value": 5,
+            "rarity": 0
+        },
+        {
+            "name": "projectilesUp",
+            "description": "It's dangerous to go alone, take this.",
+            "id": 3,
+            "imgSrc": "./Resources/Image/Items/projectilesUp.png",
+            "value": 1,
+            "rarity": 2
+        },
+        {
+            "name": "healthUp",
+            "description": "gimma that juicy juice",
+            "id": 4,
+            "imgSrc": "./Resources/Image/Items/healthUp.png",
+            "value": 5,
+            "rarity": 0
+        },
+        {
+            "name": "scaleUp",
+            "description": "bigger means better",
+            "id": 5,
+            "imgSrc": "./Resources/Image/Items/scaleUp.png",
+            "value": 13,
+            "rarity": 1
+        },
+        {
+            "name": "scaleDown",
+            "description": "small n tiny",
+            "id": 6,
+            "imgSrc": "./Resources/Image/Items/scaleDown.png",
+            "value": 13,
+            "rarity": 1
+        },
+        {
+            "name": "armorUp",
+            "description": "harder better faster stronger",
+            "id": 7,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 5,
+            "rarity": 2
+        },
+        {
+            "name": "HomeComing",
+            "description": "harder better faster stronger",
+            "id": 8,
+            "imgSrc": "./Resources/Image/Items/homecoming.png",
+            "value": 0,
+            "rarity": 3
+        },
+        {
+            "name": "Thors Hammer",
+            "description": "He will choose you!",
+            "id": 12,
+            "imgSrc": "./Resources/Image/Items/thorsHammer.png",
+            "value": 0,
+            "rarity": 3
+        },
+        {
+            "name": "zip zap",
+            "description": "brrrrzt",
+            "id": 15,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 0,
+            "rarity": 2
+        },
+        {
+            "name": "stinky",
+            "description": "you stink and make other damage",
+            "id": 16,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 0,
+            "rarity": 2
+        }
+    ],
+    "buffItems": [
+        {
+            "name": "toxicRelationship",
+            "description": "Everyone is toxic today.",
+            "id": 9,
+            "imgSrc": "./Resources/Image/Items/toxicRelationship.png",
+            "value": 1,
+            "duration": 600,
+            "tickRate": 60,
+            "rarity": 2
+        },
+        {
+            "name": "Vampy",
+            "description": "let them bleed",
+            "id": 10,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 5,
+            "duration": 300,
+            "tickRate": 100,
+            "rarity": 3
+        },
+        {
+            "name": "SlowySlow",
+            "description": "slowyslows",
+            "id": 11,
+            "imgSrc": "./Resources/Image/Items/iceBucket.png",
+            "value": 100,
+            "duration": 300,
+            "tickRate": 0,
+            "rarity": 3
+        },
+        {
+            "name": "GetStronko",
+            "description": "scalesYouUP",
+            "id": 13,
+            "imgSrc": "./Resources/Image/Items/getStronko.png",
+            "value": 25,
+            "duration": 180,
+            "tickRate": 0,
+            "rarity": 0
+        },
+        {
+            "name": "GetWeako",
+            "description": "scalesYouDown",
+            "id": 14,
+            "imgSrc": "./Resources/Image/Items/getWeako.png",
+            "value": 10,
+            "duration": 180,
+            "tickRate": 0,
+            "rarity": 0
+        }
+    ]
+}
